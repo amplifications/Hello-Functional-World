@@ -15,23 +15,49 @@ interface Lens<W, S> {
 Let’s define a lens for the type Address with focus on the street field
 
 ```typescript
-const address: Lens<Address, Street> = {
+const LAddressStreet: Lens<Address, Street> = {
   get: address => address.street,
   set: (street, address) => ({ ...address, street })
 }
+```
+Given an instance of Address, getting the street name is quite simple
 
-address.get(a1)                                 // => {num: 23, name: "high street"}
-address.set({num: 23, name: 'main street'}, a1) // => {city: "london", street: {num: 23, name: "main street"}}
+```typescript
+const a1: Address =  { city: 'london', street: { num: 23, name: 'high street' } }
+const name = a1.street.name
+```
+getting the street name is quite simple
+```typescript
+const name = a1.street.name
+```
+
+but setting a new value is awkward
+```typescript
+const a2: Address = {
+  ...a1,
+  street: {
+    ...a1.street,
+    name: 'main street'
+  }
+}
+```
+
+## Lens in action
+Let’s define a lens for the type Address with focus on the street field
+
+```typescript
+LAddressStreet.get(a1)                                 // => {num: 23, name: "high street"}
+LAddressStreet.set({num: 23, name: 'main street'}, a1) // => {city: "london", street: {num: 23, name: "main street"}}
 ```
 Now let’s define a lens for the type Street with focus on the name field
 
 ```typescript
-const street: Lens<Street, string> = {
+const LStreet2Name: Lens<Street, Name> = {
   get: street => street.name,
   set: (name, street) => ({ ...street, name })
 }
 
-const streetName = composeLens(address, street)
-streetName.get(a1)                 // => "high street"
-streetName.set('main street', a1)  // => {city: "london", street: {num: 23, name: "main street"}}
+const LAddress2StreetName = composeLens(address, LStreet2Name)
+LAddress2StreetName.get(a1)                 // => "high street"
+LAddress2StreetName.set('main street', a1)  // => {city: "london", street: {num: 23, name: "main street"}}
 ```
