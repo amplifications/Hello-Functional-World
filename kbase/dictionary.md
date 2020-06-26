@@ -30,5 +30,9 @@ const street: Lens<Street, string> = {
   get: street => street.name,
   set: (name, street) => ({ ...street, name })
 }
+
+const streetName = composeLens(address, street)
+streetName.get(a1)                 // => "high street"
+streetName.set('main street', a1)  // => {city: "london", street: {num: 23, name: "main street"}}
 ```
 * blah blah blah
