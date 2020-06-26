@@ -11,7 +11,7 @@
 // lens with another lens to look even deeper.
 // 
 // A lens is nothing more than a pair of functions, a getter and a setter. 
-// The type W represents the whole, A the subpart
+// The type W represents the whole, S the subpart
 
 interface Lens<W, S> {
   get(w: W): S,
