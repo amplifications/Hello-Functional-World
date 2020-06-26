@@ -56,6 +56,7 @@ const LStreet2Name: Lens<Street, Name> = {
   get: street => street.name,
   set: (name, street) => ({ ...street, name })
 }
+```
 
 ### Composition of Lens(es)
 ```typescript
