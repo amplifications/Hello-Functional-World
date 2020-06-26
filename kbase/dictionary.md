@@ -14,5 +14,21 @@ interface Lens<W, S> {
   get(w: W): S,
   set(s: S, w: W): W
 }
+
+// Let’s define a lens for the type Address with focus on the street field
+
+const address: Lens<Address, Street> = {
+  get: address => address.street,
+  set: (street, address) => ({ ...address, street })
+}
+
+address.get(a1)                                 // => {num: 23, name: "high street"}
+address.set({num: 23, name: 'main street'}, a1) // => {city: "london", street: {num: 23, name: "main street"}}
+
+// Now let’s define a lens for the type Street with focus on the name field
+const street: Lens<Street, string> = {
+  get: street => street.name,
+  set: (name, street) => ({ ...street, name })
+}
 ```
 * blah blah blah
