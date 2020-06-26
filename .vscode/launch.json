@@ -19,6 +19,21 @@
       ],
       "console": "integratedTerminal", //"externalTerminal",
       "internalConsoleOptions": "neverOpen"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Jest(currentDir)",
+      "program": "${workspaceFolder}/node_modules/.bin/jest",
+      // "args": ["${relativeFile}", "verbose=true"],
+      // "args":["--detectOpenHandles", "verbose=true"]
+      "args": [
+        "--testPathPattern=${workspaceFolder}",
+        "--detectOpenHandles",
+        "verbose=false"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
     }
   ]
 }

@@ -28,10 +28,6 @@
     "url": "https://github.com/amplifications/HelloFP-with-Typescript/issues"
   },
   "homepage": "https://github.com/amplifications/HelloFP-with-Typescript#readme",
-  "jest": {
-    "testEnvironment": "node",
-    "setupTestFrameworkScriptFile": "jest-expect-message"
-  },
   "contributes": {
     "configuration": {
       "title": "Test File Finder Configuration",

@@ -1,9 +1,14 @@
 module.exports = {
-  preset: 'ts-jest',
-  // testEnvironment: 'node',
-  // verbose: true,
+  // preset: 'ts-jest',
+  testEnvironment: 'node',
+
+  transform: {
+    "^.+\\.ts$": "ts-jestxxx"
+  },
+
+  verbose: true,
   // bail: true,
-  // roots: ["./src"],
-  // testRegex: "(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$",
-  // moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"]
+  roots: ["./src"],
+  testRegex: "(/__tests__/.*|(\\.|/)(test|spec))\\.(ts|js)$",
+  moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"]
 };

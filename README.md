@@ -26,6 +26,11 @@ These are explorations of amp:\\> during the pursuit of learning Functional Prog
       1. npm install prettier -D --save-exact
       2. Settings->Workspace->Format On Save->Enable
 
-   4. ts-jest
+   4. jest
+
+      1. npm -install --save-dev jest
+      2. npm -install --save-dev @types/jest
+
+   5. ts-jest
       1. npm -install --save-dev ts-jest
       2. npx ts-jest config:init | to create jest.config.js
