@@ -57,6 +57,18 @@ const LStreet2Name: Lens<Street, Name> = {
   set: (name, street) => ({ ...street, name })
 }
 
+### Composition of Lens(es)
+```typescript
+function composeLens<A, B, C>(ab: Lens<A, B>, bc: Lens<B, C>): Lens<A, C> {
+  
+  return {
+    get: a => bc.get(ab.get(a)),
+    set: (c, a) => ab.set(bc.set(c, ab.get(a)), a)
+  }
+}
+```
+
+
 const LAddress2StreetName = composeLens(address, LStreet2Name)
 LAddress2StreetName.get(a1)                 // => "high street"
 LAddress2StreetName.set('main street', a1)  // => {city: "london", street: {num: 23, name: "main street"}}
