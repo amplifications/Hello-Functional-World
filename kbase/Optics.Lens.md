@@ -15,7 +15,7 @@ interface Lens<W, S> {
 Let’s define a lens for the type Address with focus on the street field
 
 ```typescript
-const LAddressStreet: Lens<Address, Street> = {
+const LAddress2Street: Lens<Address, Street> = {
   get: address => address.street,
   set: (street, address) => ({ ...address, street })
 }
@@ -46,8 +46,8 @@ const a2: Address = {
 Let’s define a lens for the type Address with focus on the street field
 
 ```typescript
-LAddressStreet.get(a1)                                 // => {num: 23, name: "high street"}
-LAddressStreet.set({num: 23, name: 'main street'}, a1) // => {city: "london", street: {num: 23, name: "main street"}}
+LAddress2Street.get(a1)                                 // => {num: 23, name: "high street"}
+LAddress2Street.set({num: 23, name: 'main street'}, a1) // => {city: "london", street: {num: 23, name: "main street"}}
 ```
 Now let’s define a lens for the type Street with focus on the name field
 
@@ -68,7 +68,7 @@ function composeLens<A, B, C>(ab: Lens<A, B>, bc: Lens<B, C>): Lens<A, C> {
   }
 }
 
-const LAddress2StreetName = composeLens(address, LStreet2Name)
+const LAddress2StreetName = composeLens(LAddress2Street, LStreet2Name)
 LAddress2StreetName.get(a1)                 // => "high street"
 LAddress2StreetName.set('main street', a1)  // => {city: "london", street: {num: 23, name: "main street"}}
 ```
