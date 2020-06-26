@@ -1,6 +1,6 @@
 
 ## Lens
-* **Introduction to optics: lenses and prisms** | GCanti | [Medium](https://medium.com/@gcanti/introduction-to-optics-lenses-and-prisms-3230e73bfcfe)
+* **Introduction to optics: lenses and prisms** | [Giulio Canti](https://github.com/gcanti) | [Medium](https://medium.com/@gcanti/introduction-to-optics-lenses-and-prisms-3230e73bfcfe)
 ```typescript
 // A lens is a first-class reference to a subpart of some data type. 
 // Given a lens there are essentially three things you might want to do
