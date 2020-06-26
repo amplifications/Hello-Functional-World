@@ -67,8 +67,6 @@ function composeLens<A, B, C>(ab: Lens<A, B>, bc: Lens<B, C>): Lens<A, C> {
     set: (c, a) => ab.set(bc.set(c, ab.get(a)), a)
   }
 }
-```
-
 
 const LAddress2StreetName = composeLens(address, LStreet2Name)
 LAddress2StreetName.get(a1)                 // => "high street"
