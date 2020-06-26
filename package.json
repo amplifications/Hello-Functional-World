@@ -1,0 +1,47 @@
+{
+  "name": "hellofp-with-typescript",
+  "version": "1.0.0",
+  "description": "These are explorations of amp:\\\\> during the pursuit of learning Functional Programming through [TypeScript](http://typescriptlang.org) language.",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/jest": "^26.0.3",
+    "jest": "^26.1.0",
+    "prettier": "2.0.5",
+    "ts-jest": "^26.1.1",
+    "typescript": "^3.9.5"
+  },
+  "scripts": {
+    "compile": "tsc",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amplifications/HelloFP-with-Typescript.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amplifications/HelloFP-with-Typescript/issues"
+  },
+  "homepage": "https://github.com/amplifications/HelloFP-with-Typescript#readme",
+  "jest": {
+    "testEnvironment": "node",
+    "setupTestFrameworkScriptFile": "jest-expect-message"
+  },
+  "contributes": {
+    "configuration": {
+      "title": "Test File Finder Configuration",
+      "properties": {
+        "testFinder.typescriptGlob": {
+          "type": "string",
+          "default": ".spec.ts",
+          "description": "..."
+        }
+      }
+    }
+  }
+}

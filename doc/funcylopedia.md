@@ -31,6 +31,9 @@ The prefix 'co' is used to refer to 'the opposite' See [Domain](#Domain)
 See [Codomain](#Codomain)
 
 ---
+## Either
+
+---
 ## Function Composition
    See [Composition of Functions](#Composition-of-Functions)
 
@@ -40,6 +43,9 @@ See [Codomain](#Codomain)
 
 ---
 ## Immutability
+
+---
+## Maybe
 
 ---
 ## Partial application
@@ -77,4 +83,9 @@ See also [Total function](#Total-function)
   square(x: number) -> Will return valid output for all/every number
 
 See also [Partial function](#Partial-function)
+
+---
+## Tuple
+
+
 
